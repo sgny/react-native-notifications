@@ -132,8 +132,6 @@ componentWillUnmount() {
 
 ## Interactive / Actionable Notifications
 
-> This section provides description for iOS. For notifications customization on Android, refer to [our wiki](https://github.com/wix/react-native-notifications/wiki/Android-Customizations#customizing-notifications-layout).
-
 Interactive notifications allow you to reply to a message right from the notification banner or take action right from the lock screen. 
 
 On the Lock screen and within Notification Center, you swipe from right to left 

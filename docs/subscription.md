@@ -1,6 +1,6 @@
 # Push Notifications Subscription
 
-The typical flow for subscribing a device for receiving push notification in real time is to first register the device at the vendor's servers (e.g. GCM), then publishing the received token to your own push management servers.
+The typical flow for subscribing a device for receiving push notification in real time is to first register the device with APNS, then publish the received token to your own push management servers.
 
 This section is about the first part of the flow.
 
@@ -59,19 +59,3 @@ NotificationsIOS.checkPermissions().then((currentPermissions) => {
 ```
 
 
-## <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/APK_format_icon.png/768px-APK_format_icon.png" width=30/> Android
-
-Android works similarly but using a different API; The equivalent code is:
-
-```javascript
-import {NotificationsAndroid} from 'react-native-notifications';
-
-// On Android, we allow for only one (global) listener per each event type.
-NotificationsAndroid.setRegistrationTokenUpdateListener((deviceToken) => {
-	// TODO: Send the token to my server so it could send back push notifications...
-	console.log('Push-notifications registered!', deviceToken)
-});
-
-```
-
-`deviceToken` being the token used to identify the device on the GCM.
